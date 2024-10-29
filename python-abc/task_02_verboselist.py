@@ -23,4 +23,5 @@ class VerboseList(list):
             raise IndexError("Position is out of range")
         else:
             print("Popped [{}] from the list.".format(self[position]))
-            super().pop(position)
+            item = super().pop(position)
+            return item
