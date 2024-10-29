@@ -19,7 +19,7 @@ class VerboseList(list):
             super().remove(item)
 
     def pop(self, position=-1):
-        if position not in range(0, len(self)):
+        if position not in range(-len(self), len(self)):
             raise IndexError("Position is out of range")
         else:
             print("Popped [{}] from the list.".format(self[position]))
