@@ -13,7 +13,7 @@ class VerboseList(list):
 
     def remove(self, item):
         if item not in self:
-            print("item not in list")
+            raise ValueError("Value not found in the list")
         else:
             print("Removed [{}] from the list.".format(item))
             super().remove(item)
