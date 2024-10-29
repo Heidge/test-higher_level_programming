@@ -14,12 +14,9 @@ class Shape(ABC):
 class Circle(Shape):
     def __init__(self, radius):
         super().__init__()
-        if isinstance(radius, (int, float)) and radius > 0:
-            self.radius = radius
-        elif radius <= 0:
-            raise ValueError("Radius must be a positive integer")
-        else:
-            raise TypeError("Radius must be an integer")
+
+        self.radius = radius
+
 
     def area(self):
         return (self.radius ** 2) * pi
@@ -30,18 +27,9 @@ class Circle(Shape):
 class Rectangle(Shape):
     def __init__(self, height, width):
         super().__init__()
-        if isinstance(height, (int,float)) and height > 0:
-            self.height = height
-        elif height <= 0:
-            raise ValueError("Height must be a positive integer")
-        else:
-            raise TypeError("Height must be an integer")
-        if isinstance(width, (int, float)) and width > 0:
-            self.width = width
-        elif width <= 0:
-            raise ValueError("Width must be a positive integer")
-        else:
-            raise TypeError("Width must be an integer")
+        self.height = height
+        self.width = width
+
 
     def area(self):
         return self.height * self.width
